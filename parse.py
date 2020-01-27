@@ -3,7 +3,7 @@ import sys
 with open(sys.argv[1],"r") as fi:
     id = []
     index = 0
-    index1 = 0;
+    index1 = 0
     for ln in fi:
         if ln.startswith("<status status") and index == 0:
             id.append(ln[1:])
