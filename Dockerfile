@@ -7,4 +7,4 @@ WORKDIR /saver
 COPY . .
 RUN mkdir data
 
-CMD sh send.sh
+CMD sh send.sh /saver/data/output.xml
