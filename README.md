@@ -4,7 +4,7 @@
 
 To build and run with docker
 
-    docker build -t [container name]
+    docker build -t [container name] .
     docker run --rm -v [volume with output.xml]:/saver/data [container name]
 
 
