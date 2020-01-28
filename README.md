@@ -2,7 +2,11 @@
 
 ## How to use
 
-Right now Docker implementation is now working.
+To build and run with docker
+
+    docker build -t [container name]
+    docker run --rm -v [volume with output.xml]:/saver/data [container name]
+
 
 To run manually
 
