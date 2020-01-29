@@ -8,9 +8,9 @@ root = tree.getroot()
 
 for testElement in root.iter('test'):
     statusElement = testElement.find('status')
-    ## FIXME: Add protection against sql injection
     name = testElement.attrib['name']
     status = 0
     if statusElement.attrib['status'] == 'PASS':
         status = 1
-    print('INSERT INTO tasks (name, result, date, epoch) VALUES (\'{}\', {}, NOW(), EXTRACT(EPOCH FROM NOW()));'.format(name, status))
+    print('PREPARE addtask (varchar(255), int, timestamptz, int) AS INSERT INTO tasks VALUES ($1, $2, $3, $4)')
+    print('EXECUTE addtask (\'{}\', \'{}\', now(), extract(epoch from now()))'.format(name, status))
